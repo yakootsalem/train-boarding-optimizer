@@ -1,45 +1,22 @@
 #ifndef _SECRETS_H
 #define _SECRETS_H
 
-const char*ssid = ""; //example only - your project may have ssid/pass set by user
-const char* password = "";
-const char*  server = "speech.googleapis.com";
+// ===================== USER WIFI CONFIG =====================
+// Replace with your local Wi-Fi credentials
+const char* ssid = "YOUR_WIFI_SSID";
+const char* password = "YOUR_WIFI_PASSWORD";
 
-// To get the certificate for your region run:
-// openssl s_client -showcerts -connect speech.googleapis.com:443
-// Copy the certificate (all lines between and including ---BEGIN CERTIFICATE---
-// and --END CERTIFICATE--) to root.cert and put here on the root_cert variable.
-const char* root_ca = 
-    "-----BEGIN CERTIFICATE-----\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
-    "-----END CERTIFICATE-----;";
+// ===================== FIREBASE / GOOGLE API CONFIG =====================
+// Example placeholder (do not commit real keys)
+const char* server = "speech.googleapis.com";
 
+// Root certificate (optional, used for secure HTTPS)
+const char* root_ca =
+"-----BEGIN CERTIFICATE-----\n"
+"YOUR_CERTIFICATE_CONTENT\n"
+"-----END CERTIFICATE-----\n";
 
-
-// Getting Access Token : 
-// At first, you should get service account key (JSON file).
-// Type below command in Google Cloud Shell to get AccessToken: 
-// $ gcloud auth activate-service-account --key-file=KEY_FILE   (KEY_FILE is your service account key file)
-// $ gcloud auth print-access-token
-// The Access Token is expired in an hour.
-// Google recommends to use Access Token.
-//const String AccessToken = "";
-
-// It is also possible to use "API Key" instead of "Access Token". It doesn't have time limit.
-const String ApiKey = "";
-
-// see https://cloud.google.com/docs/authentication?hl=ja#getting_credentials_for_server-centric_flow
-// see https://qiita.com/basi/items/3623a576b754f738138e (Japanese)
+// Optional Google or Firebase API Key
+const char* ApiKey = "YOUR_API_KEY_HERE";
 
 #endif  // _SECRETS_H
